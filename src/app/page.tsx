@@ -3,6 +3,10 @@ import Hero from '@/components/sections/Hero';
 import Stats from '@/components/sections/Stats';
 import Partners from '@/components/sections/Partners';
 import AccredianEdge from '@/components/sections/AccredianEdge';
+import DomainExpertise from '@/components/sections/DomainExpertise';
+import Testimonials from '@/components/sections/Testimonials';
+import CatFramework from '@/components/sections/CatFramework';
+import Faq from '@/components/sections/Faq';
 
 export default function Home() {
   return (
@@ -12,6 +16,10 @@ export default function Home() {
       <Stats />
       <Partners />
       <AccredianEdge />
+      <DomainExpertise />
+      <Testimonials />
+      <CatFramework />
+      <Faq />
     </main>
   );
 }
