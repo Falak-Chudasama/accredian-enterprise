@@ -32,7 +32,7 @@ export default function LeadForm() {
         >
           <div className="bg-zinc-900/50 backdrop-blur-2xl border border-zinc-800 p-8 md:p-16 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
             <form className="space-y-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div className="space-y-4">
                   <label className="flex items-center gap-2 text-zinc-300 text-sm font-bold uppercase tracking-widest">
                     <User className="w-4 h-4 text-blue-500" />
@@ -88,7 +88,7 @@ export default function LeadForm() {
               <motion.button
                 whileHover={{ scale: 1.01, backgroundColor: '#3b82f6' }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full bg-blue-600 text-white font-black py-6 rounded-2xl flex items-center justify-center gap-3 transition-all text-lg uppercase tracking-widest shadow-[0_10px_20px_rgba(37,99,235,0.2)]"
+                className="w-full bg-blue-600 text-white font-black py-3 rounded-2xl flex items-center justify-center gap-3 transition-all text-lg uppercase tracking-widest shadow-[0_10px_20px_rgba(37,99,235,0.2)]"
               >
                 Initialize Partnership
                 <Send className="w-5 h-5" />
