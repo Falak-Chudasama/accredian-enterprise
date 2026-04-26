@@ -8,6 +8,7 @@ import Testimonials from '@/components/sections/Testimonials';
 import CatFramework from '@/components/sections/CatFramework';
 import Faq from '@/components/sections/Faq';
 import Footer from '@/components/sections/Footer';
+import LeadForm from '@/components/sections/LeadForm';
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <Testimonials />
       <CatFramework />
       <Faq />
+      <LeadForm />
       <Footer />
     </main>
   );

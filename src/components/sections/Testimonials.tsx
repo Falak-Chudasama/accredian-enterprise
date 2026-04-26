@@ -44,14 +44,6 @@ export default function Testimonials() {
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-24">
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="inline-block px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs font-bold uppercase tracking-[0.2em] mb-6 shadow-[0_0_15px_rgba(59,130,246,0.15)]"
-          >
-            Voice of Global Partners
-          </motion.div>
           
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
