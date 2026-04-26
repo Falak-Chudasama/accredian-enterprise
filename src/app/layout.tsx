@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
- 
-const inter = Inter({ subsets: ["latin"] });
+
+// This font instantly elevates the design from a template to a premium product.
+const jakarta = Plus_Jakarta_Sans({ 
+  subsets: ["latin"],
+  weight: ['300', '400', '500', '600', '700', '800'],
+});
 
 export const metadata: Metadata = {
   title: "Accredian Enterprise",
-  description: "Enterprise solutions for modern teams",
+  description: "Enterprise training solutions for modern teams",
 };
 
 export default function RootLayout({
@@ -16,7 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={inter.className}>{children}</body>
+      <body className={`${jakarta.className} bg-slate-950 text-slate-50 antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }
