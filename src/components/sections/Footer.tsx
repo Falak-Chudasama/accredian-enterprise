@@ -26,7 +26,7 @@ const logos = {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#020617] pt-36 pb-12 relative overflow-hidden">
+    <footer className="bg-[#020617] px-10 pt-36 pb-12 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-16">
           <div className="lg:col-span-4 space-y-8">
@@ -72,7 +72,7 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-4 lg:ml-auto w-full lg:max-w-sm">
-            <div className="bg-[#080d1e] p-8 rounded-3xl border border-white/5 space-y-8">
+            <div className="bg-[#080d1e] px-8 rounded-3xl border border-white/5 space-y-8">
               <h4 className="text-white font-bold text-lg tracking-tight">Connect with an Advisor</h4>
               
               <div className="space-y-6">
