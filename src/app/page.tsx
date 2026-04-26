@@ -7,6 +7,7 @@ import DomainExpertise from '@/components/sections/DomainExpertise';
 import Testimonials from '@/components/sections/Testimonials';
 import CatFramework from '@/components/sections/CatFramework';
 import Faq from '@/components/sections/Faq';
+import Footer from '@/components/sections/Footer';
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <Testimonials />
       <CatFramework />
       <Faq />
+      <Footer />
     </main>
   );
 }
