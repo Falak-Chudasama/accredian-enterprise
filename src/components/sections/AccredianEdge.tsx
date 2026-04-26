@@ -2,126 +2,250 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Lightbulb, 
-  Users, 
-  Settings, 
-  Cpu, 
-  Zap, 
-  Target, 
-  Box 
+import {
+  Lightbulb,
+  Users,
+  Settings,
+  Cpu,
+  Zap,
+  Target,
+  Box
 } from 'lucide-react';
 
 const steps = [
   {
     title: "Tailored Solutions",
-    desc: "Programs customized to your organization's goals.",
+    desc: "Programs customized to your organization's goals and challenges.",
     icon: Lightbulb,
-    align: "top"
+    pos: "top" as const
   },
   {
     title: "Expert Guidance",
     desc: "Learn from industry leaders with real-world success.",
     icon: Users,
-    align: "bottom"
+    pos: "bottom" as const
   },
   {
     title: "Innovative Framework",
-    desc: "Proprietary methods for application-driven results.",
+    desc: "Proprietary methods for impactful, application-driven results.",
     icon: Settings,
-    align: "top"
+    pos: "top" as const
   },
   {
     title: "Advanced Technology",
-    desc: "State-of-the-art LMS for seamless learning.",
+    desc: "State-of-the-art LMS for seamless learning experiences.",
     icon: Cpu,
-    align: "bottom"
+    pos: "bottom" as const
   },
   {
     title: "Diverse Offerings",
-    desc: "Courses across industries and emerging fields.",
+    desc: "Courses across industries, skill levels, and emerging fields.",
     icon: Zap,
-    align: "top"
+    pos: "top" as const
   },
   {
     title: "Proven Impact",
     desc: "Trusted by leading organizations for measurable ROI.",
     icon: Target,
-    align: "bottom"
+    pos: "bottom" as const
   },
   {
     title: "Flexible Delivery",
     desc: "Online and offline options tailored to your needs.",
     icon: Box,
-    align: "top"
+    pos: "top" as const
   }
 ];
 
 export default function AccredianEdge() {
   return (
-    <section className="bg-slate-950 py-32 overflow-hidden relative" id="framework">
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        
-        <div className="text-center mb-24">
+    <>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+        .edge-display { font-family: 'Instrument Serif', Georgia, serif; }
+        .edge-body    { font-family: 'DM Sans', sans-serif; }
+        .edge-mono    { font-family: 'JetBrains Mono', monospace; }
+
+        .node-ring {
+          position: absolute;
+          inset: -8px;
+          border-radius: 50%;
+          border: 1px dashed rgba(99,102,241,0.2);
+          transition: border-color 0.4s ease;
+        }
+        .node-wrap:hover .node-ring {
+          border-color: rgba(99,102,241,0.5);
+        }
+        .node-wrap:hover .node-icon-bg {
+          background: rgba(99,102,241,0.15);
+          border-color: rgba(99,102,241,0.5);
+          box-shadow: 0 0 20px -4px rgba(99,102,241,0.3);
+        }
+        .node-wrap:hover .node-icon {
+          color: #a5b4fc;
+        }
+        .node-icon-bg {
+          transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+        .node-icon {
+          transition: color 0.4s ease;
+        }
+
+        .shimmer-track {
+          animation: shimmer-move 3s linear infinite;
+        }
+        @keyframes shimmer-move {
+          0%   { transform: translateX(-100%); }
+          100% { transform: translateX(500%); }
+        }
+
+        .label-line {
+          width: 1px;
+          background: linear-gradient(to bottom, transparent, rgba(99,102,241,0.3), transparent);
+        }
+      `}</style>
+
+      <section className="edge-body bg-[#080c14] py-28 relative overflow-hidden" id="framework">
+
+        {/* Ambient background */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[400px] bg-indigo-600/5 blur-[120px] rounded-full" />
+        </div>
+
+        {/* Subtle grid */}
+        <div className="absolute inset-0 opacity-[0.02]" style={{
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.8) 1px, transparent 1px)',
+          backgroundSize: '60px 60px'
+        }} />
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+
+          {/* Header */}
+          <div className="text-center mb-18">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight"
+            className="text-5xl md:text-7xl font-extrabold text-white tracking-tighter mb-4"
           >
             The <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Accredian Edge</span>
           </motion.h2>
-          <p className="text-slate-400 text-lg font-medium">Key Aspects of Our Strategic Training</p>
+          <p className="text-slate-400 font-medium tracking-widest uppercase text-sm">Strategic Training Excellence</p>
         </div>
 
-        <div className="relative">
-          {/* Central Animated Line */}
-          <div className="absolute top-1/2 left-0 w-full h-0.5 bg-slate-800 -translate-y-1/2 hidden lg:block">
-            <motion.div 
-              initial={{ width: 0 }}
-              whileInView={{ width: '100%' }}
-              viewport={{ once: true }}
-              transition={{ duration: 2, ease: "easeInOut" }}
-              className="h-full bg-gradient-to-r from-blue-500 to-indigo-500 shadow-[0_0_15px_rgba(79,70,229,0.5)]"
-            />
+          {/* Timeline */}
+          <div className="relative hidden lg:block">
+
+            {/* Top label row */}
+            <div className="grid grid-cols-7 mb-0" style={{ height: '160px' }}>
+              {steps.map((step, i) => (
+                <div key={i} className="flex flex-col items-center justify-end pb-0">
+                  {step.pos === 'top' && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -12 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: i * 0.07 }}
+                      className="flex flex-col items-center"
+                    >
+                      <div className="text-center px-2 mb-3">
+                        <p className="text-white text-[13px] font-semibold leading-snug mb-1.5 whitespace-nowrap">{step.title}</p>
+                        <p className="text-slate-500 text-[11px] leading-relaxed font-light max-w-[110px] mx-auto">{step.desc}</p>
+                      </div>
+                      <div className="label-line h-10" />
+                      <div className="w-1 h-1 rounded-full bg-indigo-500/50" />
+                    </motion.div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Icon row with track */}
+            <div className="relative flex items-center" style={{ height: '72px' }}>
+              {/* Track line */}
+              <div className="absolute top-1/2 left-0 right-0 h-px -translate-y-1/2 bg-slate-800 overflow-hidden">
+                <div
+                  className="shimmer-track absolute top-0 left-0 h-full w-1/5"
+                  style={{ background: 'linear-gradient(90deg, transparent, rgba(99,102,241,0.6), transparent)' }}
+                />
+              </div>
+
+              {/* Nodes */}
+              <div className="grid grid-cols-7 w-full relative z-10">
+                {steps.map((step, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, scale: 0.7 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.45, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] }}
+                    className="flex items-center justify-center"
+                  >
+                    <div className="node-wrap relative cursor-pointer flex items-center justify-center" style={{ width: 56, height: 56 }}>
+                      <div className="node-ring" />
+                      <div
+                        className="node-icon-bg relative z-10 w-14 h-14 rounded-full border border-slate-700/80 bg-[#0c1120] flex items-center justify-center"
+                      >
+                        <step.icon className="node-icon w-5 h-5 text-slate-400" />
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Bottom label row */}
+            <div className="grid grid-cols-7" style={{ height: '160px' }}>
+              {steps.map((step, i) => (
+                <div key={i} className="flex flex-col items-center justify-start pt-0">
+                  {step.pos === 'bottom' && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 12 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: i * 0.07 }}
+                      className="flex flex-col items-center"
+                    >
+                      <div className="w-1 h-1 rounded-full bg-indigo-500/50" />
+                      <div className="label-line h-10" />
+                      <div className="text-center px-2 mt-3">
+                        <p className="text-white text-[13px] font-semibold leading-snug mb-1.5 whitespace-nowrap">{step.title}</p>
+                        <p className="text-slate-500 text-[11px] leading-relaxed font-light max-w-[110px] mx-auto">{step.desc}</p>
+                      </div>
+                    </motion.div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Steps Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-12 relative">
-            {steps.map((step, index) => (
+          {/* Mobile layout */}
+          <div className="lg:hidden grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {steps.map((step, i) => (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: step.align === 'top' ? -40 : 40 }}
+                key={i}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                className={`flex flex-col items-center group ${
-                  step.align === 'top' ? 'lg:flex-col' : 'lg:flex-col-reverse'
-                }`}
+                transition={{ duration: 0.45, delay: i * 0.06 }}
+                className="flex items-start gap-4 p-5 rounded-xl border border-slate-800/60 bg-slate-900/30 hover:border-indigo-500/30 transition-colors duration-300"
               >
-                {/* Content Card */}
-                <div className={`text-center mb-8 lg:mb-0 ${step.align === 'top' ? 'lg:mb-12' : 'lg:mt-12'}`}>
-                  <h3 className="text-white font-bold mb-2 group-hover:text-blue-400 transition-colors">{step.title}</h3>
-                  <p className="text-slate-500 text-xs leading-relaxed max-w-[150px] mx-auto">{step.desc}</p>
+                <div className="flex-shrink-0 w-10 h-10 rounded-full border border-slate-700 bg-[#0c1120] flex items-center justify-center">
+                  <step.icon className="w-4 h-4 text-indigo-400" />
                 </div>
-
-                {/* Animated Circle / Icon */}
-                <div className="relative">
-                  <div className="w-16 h-16 rounded-full bg-slate-900 border-2 border-slate-800 flex items-center justify-center relative z-20 group-hover:border-indigo-500 group-hover:shadow-[0_0_20px_rgba(79,70,229,0.3)] transition-all duration-500">
-                    <step.icon className="w-6 h-6 text-indigo-400 group-hover:text-white transition-colors" />
-                  </div>
-                  
-                  {/* Decorative pulse for the circle */}
-                  <div className="absolute inset-0 rounded-full bg-indigo-500/20 animate-ping opacity-0 group-hover:opacity-100" />
+                <div>
+                  <p className="text-white text-[13px] font-semibold mb-1">{step.title}</p>
+                  <p className="text-slate-500 text-[11px] leading-relaxed">{step.desc}</p>
                 </div>
               </motion.div>
             ))}
           </div>
         </div>
-      </div>
 
-      {/* Background Decorative Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[400px] bg-blue-600/10 blur-[120px] pointer-events-none rounded-full" />
-    </section>
+        {/* Bottom separator */}
+        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-800 to-transparent" />
+      </section>
+    </>
   );
 }
